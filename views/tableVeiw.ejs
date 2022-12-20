@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="https://m.media-amazon.com/images/I/31M2GpmH5VL.png">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title><%=title%></title>
+</head>
+<body onload="showStartingPlayerPopup()">
+
+
+    <nav role='navigation'>
+        <div class="header">
+            <img class="logo" src="/images/logo.png" alt="Jeopardy logo">
+        </div>
+
+        <div id="menuToggle">
+          <input type="checkbox" />
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu">
+            <a href="http://localhost:3000/"><li>Forside</li></a>
+            <a href="http://localhost:3000/scoreboard"><li>Leaderboard</li></a>
+            <a href="javascript:showHelpPopup()"><li>Hjælp</li></a>
+            <a href="http://localhost:3000/gamemenu"><li>Nyt spil</li></a>
+          </ul>
+        </div>
+    </nav>
+
+    <section class="table">
+
+<div class="theTableOne" id="firstTable">
+
+        <table id="myTable">
+            <tr id="kategori" class="Kategori" >
+                <th>Alle gode ting på denne jord</th>
+                <th>Kategori 2</th>
+                <th>Kategori 3</th>
+                <th>Kategori 4</th>
+                <th>Kategori 5</th>
+                <th>Kategori 6</th>
+            </tr>
+            <tr class="tableRow1" id="1RoundTableRow1">
+                <th value = "1">100</th>
+                <th value = "2">100</th>
+                <th value = "3">100</th>
+                <th value = "4">100</th>
+                <th value = "5">100</th>
+                <th value = "6">100</th>
+            </tr>
+            <tr class="tableRow2" id="1RoundTableRow2">
+                <th value = "1">200</th>
+                <th value = "2">200</th>
+                <th value = "3">200</th>
+                <th value = "4">200</th>
+                <th value = "5">200</th>
+                <th value = "6">200</th>
+            </tr>
+            <tr class="tableRow3" id="1RoundTableRow3">
+                <th value = "1">300</th>
+                <th value = "2">300</th>
+                <th value = "3">300</th>
+                <th value = "4">300</th>
+                <th value = "5">300</th>
+                <th value = "6">300</th>
+            </tr>
+            <tr class="tableRow4" id="1RoundTableRow4">
+                <th value = "1">400</th>
+                <th value = "2">400</th>
+                <th value = "3">400</th>
+                <th value = "4">400</th>
+                <th value = "5">400</th>
+                <th value = "6">400</th>
+            </tr>
+            <tr class="tableRow5" id="1RoundTableRow5">
+                <th value = "1" >500</th>
+                <th value = "2" >500</th>
+                <th value = "3" >500</th>
+                <th value = "4" >500</th>
+                <th value = "5" >500</th>
+                <th value = "6" >500</th>
+            </tr>
+            
+
+        </table>
+
+</div>
+
+
+<div class="hide" id="secondTable">
+    <table id="myTable">
+        <tr id="kategoriTwo" class="Kategori" >
+            <th>Alle gode ting på denne jord</th>
+            <th>Kategori 2</th>
+            <th>Kategori 3</th>
+            <th>Kategori 4</th>
+            <th>Kategori 5</th>
+            <th>Kategori 6</th>
+        </tr>
+        <tr class="tableRow1" id="2RoundTableRow1">
+            <th value="1">200</th>
+            <th value="2">200</th>
+            <th value="3">200</th>
+            <th value="4">200</th>
+            <th value="5">200</th>
+            <th value="6">200</th>
+        </tr>
+        <tr class="tableRow2" id="2RoundTableRow2">
+            <th value="1">400</th>
+            <th value="2">400</th>
+            <th value="3">400</th>
+            <th value="4">400</th>
+            <th value="5">400</th>
+            <th value="6">400</th>
+        </tr>
+        <tr class="tableRow3" id="2RoundTableRow3">
+            <th value="1">600</th>
+            <th value="2">600</th>
+            <th value="3">600</th>
+            <th value="4">600</th>
+            <th value="5">600</th>
+            <th value="6">600</th>
+        </tr>
+        <tr class="tableRow4" id="2RoundTableRow4">
+            <th value="1">800</th>
+            <th value="2">800</th>
+            <th value="3">800</th>
+            <th value="4">800</th>
+            <th value="5">800</th>
+            <th value="6">800</th>
+        </tr>
+        <tr class="tableRow5" id="2RoundTableRow5">
+            <th value="1">1000</th>
+            <th value="2">1000</th>
+            <th value="3">1000</th>
+            <th value="4">1000</th>
+            <th value="5">1000</th>
+            <th value="6">1000</th>
+        </tr>
+
+
+    </table>
+
+</div>
+
+
+
+
+    </section>
+
+
+    <section class="podium">
+
+        <div class="card" id="card1">
+            <div class="points">
+                <p></p>
+            </div>
+            <div class="name">
+            <p >Name</p>
+            </div>
+            <div class="button">
+                <p></p>
+            </div>
+        </div> 
+
+        <div class="card" id="card2">
+            <div class="points">
+                <p></p>
+            </div>
+            <div class="name">
+                <p>Name</p>
+            </div>
+            <div class="button">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="card" id="card3">
+            <div class="points">
+                <p></p>
+            </div>
+            <div class="name">
+                <p>Name</p>
+            </div>
+            <div class="button">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="card" id="card4">
+            <div class="points">
+                <p></p>
+            </div>
+            <div class="name">
+                <p>Name</p>
+            </div>
+            <div class="button">
+                <p></p>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="fadeBackground"></div>
+
+<div class="popup" id="startingPlayerPopup">
+    <br><br>
+    <h2 id="startingPlayer"></h2>
+    <button type="button" onclick="closeStartingPlayerPopup()" id="closeStartingPlayerPopup">Lets go!</button>
+</div>
+
+
+<div class="popup" id="startingRoundTwo">
+    <br><br>
+    <h2>Round 2!</h2>
+    <button type="button" onclick="closeStartingPlayerPopup()" id="closeStartingRoundTwoPopUp">Lets go!</button>
+</div>
+
+
+<div class="popup" id="gameFinished">
+    <br>
+    <h2>Vinder</h2>
+
+    <h1 id="winnerName">Name</h1>
+ 
+    <h2>Tillykke!</h2>
+    <button type="button" onclick="gotoScoreboard()" id="gameFinishedMoveToHighScore">Fortsæt</button>
+</div>
+
+
+
+
+
+     <!------------------------------ POPUP QUESTION ---------------------------------------------------->
+     
+     <!-- fade background -->
+     <div id="fadeQuestion_popup_background"></div>
+     
+     <!-- <div class="maincontainer" class="question-popup" id="Question_popup">
+      <div class="thecard"> -->
+
+       <!-- maincontainer: -->
+       <div class="question-popup" id="Question_popup"> 
+        <div class="thecard" id="thecard">
+
+         <div class="thefront" id="frontQuestion">
+          <br>
+          <h2 id="question_popup_H2">Spørgsmål</h2>
+          <div id="questionBlock" class="questionBlock100">
+                      
+           <div id="textTimeout"></div>
+           <div id="numberTimeout"></div>
+           <h2 id="firstToBuzzH2"></h2>
+           <button id="skipButton" class="hide" class="knap" onclick="skipQuestion()">Skip</button>
+          </div>
+
+           <!-- <h2 id="firstToBuzzH2"></h2> -->
+
+           
+          
+         </div>
+
+         <div class="theback" id="backQuestion">
+          <br>
+          <h2 id="question_popup_H2_Back">Spørgsmål</h2>
+
+          <div id="answerBlock" class="answerBlock100">
+
+           <input id=answerInput type="text" placeholder="skriv svaret her..." autocomplete="off">
+           <button id="answerButton" class="knap" onclick="answerButton()">Svar</button>
+           <button id="OKButtonSkip" class="knap" class="hide" onclick="OKButtonSkip()">OK</button>
+
+                    
+          </div>
+
+         <div id="countdownAnswer"></div>
+
+<!-- <div class="base-timer">
+    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining ${remainingPathColor}" d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "></path>
+        </g>
+    </svg>
+    <span id="base-timer-label" class="base-timer__label"> formatTime(timeLeft);</span>
+</div> -->
+
+
+
+
+
+
+          <h4 class="answerBlock100" id="answerResponce"></h4>
+
+          <div id="afterAnwserButtons">
+            <div>
+            <button id="itWasRightButton" class="hide" class="knap">Svar var rigtigt</button>
+            </div>
+            <div>
+            <button id="continueButton" class="hide" class="knap">Fortsæt</button>
+            </div>
+
+
+          </div>
+
+         </div>
+
+        </div>
+       </div>
+       
+       <button id="gotoScoreboardButton" class="knap" onclick="gotoScoreboard()">Scoreboard</button>
+
+
+       <!------------------------------ POPUP REGLER OG FADE BAGGRUND ---------------------------------------------------->
+     <!-- fade background -->
+     <div id="fadeBackground" onclick="closeHelpPopup()"></div>
+
+     <div>
+      <!-- popup button -->
+      <!-- <button type="submit" class="knap" onclick="showHelpPopup()">Hjælp</button> -->
+      <!-- popup msg -->
+      <div class="popup" id="popup">
+       <br>
+       <h2>HJÆLP</h2>
+       <p>For at vælge et spørgsmål, skal du klikke på det felt du ønsker i tabellen.</p>
+       <p>Kategorierne står øverst og pointene står i hvert felt under. Sværhedsgraden af spørgsmålet stiger i takt med mængden af point.</p>
+       <p>Når et spørgsmål er valgt vil en timer tælle ned indtil spillere kan buzze ind. Det er kun den spiller som buzzer ind først som får lov til at svare.</p>
+       <p>Indtast dit svar i inputfeltet. Hvis computeren siger at dit svar var forkert, men det i virkeligheden er rigtigt, kan man benytte knappen "Svar var rigtigt" for at overtrumfe dette</p>
+       <button type="button" onclick="closeHelpPopup()" id="closeHelp">OK</button>
+      </div>
+
+     </div>
+       
+
+</body>
+
+<script src="/scripts/tableCategories.js"></script>
+<script src="/scripts/showQuestions.js"></script>
+
+<script src="/scripts/popup.js"></script>
+<script src="/scripts/gotoScoreboard.js"></script>
+
+</html>

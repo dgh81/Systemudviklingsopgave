@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Find bedre ikon: -->
+    <!-- https://icon-library.com/images/jeopardy-icon/jeopardy-icon-29.jpg -->
+    <link rel="icon" type="image/x-icon" href="https://m.media-amazon.com/images/I/31M2GpmH5VL.png">
+    
+</head>
+<body onload="setupCategoryDropdowns()">
+    
+    <nav role='navigation'>
+        <div class="header">
+            <img class="logo" src="/images/logo.png" alt="Jeopardy logo">
+        </div>
+
+        <div id="menuToggle">
+          <input type="checkbox" />
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu">
+            <a href="http://localhost:3000/"><li>Forside</li></a>
+            <a href="http://localhost:3000/scoreboard"><li>Leaderboard</li></a>
+            <a href="javascript:showHelpPopup()"><li>Hjælp</li></a>
+            <a href="http://localhost:3000/gamemenu"><li>Nyt spil</li></a>
+          </ul>
+        </div>
+    </nav>
+    
+
+    <div class="beholder">
+
+     <!----------------------------------------- SPILLERE ------------------------------------------->
+     <div class="spiller">
+      <h1 class="overskrift">SPILLERE</h1>
+      
+      <!-- SPILLER1 -->
+      <form id="spillerForm1">
+       <div class="formFormat">
+
+        <div class="internal">
+         <img src="/images/spiller.png" class="spillerAvatar">
+         <input type="text" value="" id="spiller1" class="internalInput" maxlength="14" placeholder="Spiller 1">
+        </div>
+
+        <div class="internal">
+         <img src="/images/buzzer.png" id="buzzer1Img" class="spillerBuzzerImg" oninput="closeBuzzerPopup()" onclick="showBuzzerPopup(this.id)" maxlength="1" title="Vælg en knap på tastaturet">
+         <label id="buzzer1Label" id="buzzer1" class="buzzerLabel"onclick=" showBuzzerPopup(this.id)">Buzzerknap: </label>
+        </div>
+
+       </div>
+
+       <div class="minus">
+        <!-- <img class="minusButton" src="/images/minus.png" alt="" onclick="removePlayer(spillerForm1, dividerForm1)"> -->
+       </div>
+
+      </form>
+      
+      <!-- Divider -->
+      <hr class="solid" id="dividerForm1">
+
+      <!-- SPILLER2 -->
+      <form id="spillerForm2">
+       <div class="formFormat">
+     
+        <div class="internal">
+         <img src="/images/spiller.png" class="spillerAvatar">
+         <input type="text" value="" id="spiller2" class="internalInput" maxlength="14" placeholder="Spiller 2">
+        </div>
+
+        <div class="internal">
+         <img src="/images/buzzer.png" id="buzzer2Img" class="spillerBuzzerImg" oninput="closeBuzzerPopup()" onclick="showBuzzerPopup(this.id)" maxlength="1" title="Vælg en knap på tastaturet">
+         <label id="buzzer2Label" id="buzzer2" class="buzzerLabel" onclick="showBuzzerPopup(this.id)">Buzzerknap: </label>
+        </div>
+
+       </div>
+
+       <div class="minus">
+        <!-- <img class="minusButton" src="/images/minus.png" alt="" onclick="removePlayer(spillerForm2, dividerForm2)"> -->
+       </div>
+
+      </form>
+      
+      <!-- Divider -->
+      <hr class="solid" id="dividerForm2">
+
+      <!-- SPILLER3 -->
+      <form id="spillerForm3">
+       <div class="formFormat">
+
+        <div class="internal">
+         <img src="/images/spiller.png" class="spillerAvatar">
+         <input type="text" value="" id="spiller3" class="internalInput" maxlength="14" placeholder="Spiller 3">
+        </div>
+
+        <div class="internal">
+         <img src="/images/buzzer.png" id="buzzer3Img" class="spillerBuzzerImg" oninput="closeBuzzerPopup()" onclick="showBuzzerPopup(this.id)" maxlength="1" title="Vælg en knap på tastaturet">
+         <label id="buzzer3Label" id="buzzer3" class="buzzerLabel" onclick="showBuzzerPopup(this.id)">Buzzerknap: </label>
+        </div>
+
+       </div>
+
+       <div class="minus">
+        <img class="playerButton minusButton" src="/images/minus.png" alt="" onclick="removePlayer(spillerForm3, dividerForm3)">
+       </div>
+
+      </form>
+
+      <hr class="solid" id="dividerForm3" style="display: none;">
+
+      <!-- SPILLER4 -->
+      <form id="spillerForm4">
+       <div class="formFormat">
+     
+        <div class="internal">
+         <img src="/images/spiller.png" class="spillerAvatar">
+         <input type="text" value="" id="spiller4" class="internalInput" maxlength="14" placeholder="Spiller 4">
+        </div>
+
+        <div class="internal">
+         <img src="/images/buzzer.png" id="buzzer3Img" class="spillerAvatar" oninput="closeBuzzerPopup()" onclick="showBuzzerPopup(this.id)" maxlength="1" title="Vælg en knap på tastaturet">
+         <label id="buzzer4Label" id="buzzer4" class="buzzerLabel" onclick="showBuzzerPopup(this.id)">Buzzerknap: </label>
+        </div>
+
+       </div>
+
+       <div class="minus">
+        <img class="playerButton minusButton" src="/images/minus.png" alt="" onclick="removePlayer4(spillerForm4)">
+       </div>
+
+      </form>
+
+      <hr class="solid" id="dividerForm4" style="display: none;">
+     
+      <div class="plus" id="plusknap">
+       <img class="playerButton plusButton" src="/images/plus.png" onclick="addPlayer()">
+      </div>
+      
+      <h2 id="plusOverskrift">Tilføj spiller</h2>
+
+     </div>
+
+     <!-- Når vi tilføjer nr 3 spiller, skal vi vise minusknapper (fjern ".minus input display:none" fra styles.css) -->
+
+     <!----------------------------------------- KATEGORIER ------------------------------------------->
+
+     <!-- Vi burde nok bygge alt dette fra javascriptet ?!?: -->
+     <!-- Fjern tal fra kategorier - de viser ikke rigtig noget, der giver mening?! -->
+     <div class="kategori">
+      <h1 class="overskrift">KATEGORIER</h1>
+      <h2 class="rundeOverskrift">Runde 1</h2>
+
+      <form id="kategorivalg1" class="katForm">
+
+       <div class="runde">
+        <div class="række">
+         
+         <div class="valg">
+          <!-- <h3>1</h3> -->
+          <select value="" id="kategori1" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>2</h3> -->
+          <select value="" id="kategori2" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>3</h3> -->
+          <select value="" id="kategori3" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+        </div>
+
+        <div class="række">
+         
+         <div class="valg">
+          <!-- <h3>4</h3> -->
+          <select value="" id="kategori4" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>5</h3> -->
+          <select value="" id="kategori5" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>6</h3> -->
+          <select value="" id="kategori6" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+        </div>
+
+       </div>
+
+      </form>
+
+      <br><br><br>
+
+      <h2 class="rundeOverskrift">Runde 2</h2>
+
+      <form id="kategorivalg1" class="katForm">
+
+       <div class="runde">
+        <div class="række">
+         
+         <div class="valg">
+          <!-- <h3>1</h3> -->
+          <select value="" id="kategori7" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>2</h3> -->
+          <select value="" id="kategori8" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>3</h3> -->
+          <select value="" id="kategori9" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+        </div>
+
+        <div class="række">
+         
+         <div class="valg">
+          <!-- <h3>4</h3> -->
+          <select value="" id="kategori10" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>5</h3> -->
+          <select value="" id="kategori11" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+         <div class="valg">
+          <!-- <h3>6</h3> -->
+          <select value="" id="kategori12" class="kategoriDropdown">
+           <option>vælg kategori</option>
+           <option>A</option>
+           <option>B</option>
+          </select>
+         </div>
+
+        </div>
+
+       </div>
+
+      </form>
+
+      <div class="bundKnapperDiv">
+       <div class="bundKnapper"><button class="knap" id="kategori-knap" onclick="setupRandomCategories()">Tilfældige kategorier</button></div>
+       <div class="bundKnapper"><button class="knap" id="start-knap" onclick="startGame()">START</button></div>
+       <div class="bundKnapper"></div>
+      </div>
+       <!-- <div class="kategoriknap">
+        
+       </div> -->
+      
+
+     </div>
+     
+     
+     <!------------------------------ POPUP REGLER OG FADE BAGGRUND ---------------------------------------------------->
+     <!-- fade background -->
+     <div id="fadeBackground" onclick="closeHelpPopup()"></div>
+
+     <div>
+      <!-- popup button -->
+      <!-- <button type="submit" class="knap" onclick="showHelpPopup()">Hjælp</button> -->
+      <!-- popup msg -->
+      <div class="popup" id="popup">
+       <br>
+       <h2>HJÆLP</h2>
+       <p>Ude i venstre side er det muligt at tilføje og slette spillere, samt give dem navne og ændre buzzerknappen.</p>
+       <p>Du kan selv vælge kategori, eller trykke på "nye kategorier" for at få computeren til at vælge tilfældige.</p>
+       <p>Ved et tryk på "HIGHSCORE" finder du en oversigt over de bedste spillere!</p>
+       <p>Når du har udfyldt alle felter er du klar til at spille. Tryk derfor på "START".</p>
+       <button type="button" onclick="closeHelpPopup()" id="closeHelp">OK</button>
+      </div>
+
+     </div>
+     <!----------------------------------------------------------------------------------------------------------------->
+
+        <!------------------------------ TEST KEYBOARD POPUP ---------------------------------------------------->
+        <!-- fade background -->
+
+        <div>
+         
+         <div class="popupBuzzer" id="popupBuzzer">
+          <br>
+          <h2>Buzzer</h2>
+          <p id="popupBuzzerText">Vælg en knap på tastaturet!</p>
+          <button type="button" onclick="closeBuzzerPopup()">OK</button>
+         </div>
+
+        </div>
+        <!----------------------------------------------------------------------------------------------------------------->
+
+    </div>
+<script>var exports = {};</script>
+<script src="/scripts/loadCategories.js"></script>
+<script src="/scripts/popup.js"></script>
+<script src="/scripts/startGame.js"></script>
+<script src="/scripts/addPlayer.js"></script>
+</body>
+
+<!-- <script>var exports = {};</script> -->
+
+
+</html>

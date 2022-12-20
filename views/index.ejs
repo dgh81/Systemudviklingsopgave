@@ -1,0 +1,69 @@
+<html lang="en"><head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title><%=title%></title>
+ <link rel="stylesheet" href="/css/styles.css">
+ <!-- <script>var exports = {};</script> -->
+ <!-- <script src="../scripts/tempNavi.js"></script> -->
+ 
+ <!-- Find bedre ikon: -->
+ <!-- https://icon-library.com/images/jeopardy-icon/jeopardy-icon-29.jpg -->
+ <link rel="icon" type="image/x-icon" href="https://m.media-amazon.com/images/I/31M2GpmH5VL.png">
+ 
+</head>
+<body>
+
+ <!-- <div class="header">
+     <img class="logo" src="/images/logo.png" alt="Jeopardy logo">
+ </div> -->
+
+ <nav role='navigation'>
+    <div class="header">
+        <img class="logo" src="/images/logo.png" alt="Jeopardy logo">
+    </div>
+
+    <div id="menuToggle">
+      <input type="checkbox" />
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <ul id="menu">
+        <a href="http://localhost:3000/"><li>Forside</li></a>
+        <a href="http://localhost:3000/scoreboard"><li>Leaderboard</li></a>
+        <!-- <a href="javascript:showHelpPopup()"><li>Hjælp</li></a> -->
+        <a href="http://localhost:3000/gamemenu"><li>Nyt spil</li></a>
+      </ul>
+    </div>
+</nav>
+
+ 
+
+ <div id="forsideBeholder">
+     <div id="spilleregler">
+         <h2>SÅDAN SPILLER I</h2>
+         <p>Jeopardy er et spil som er bedst kendt fra TV. Spillet er sat op af 2 runder med spørgsmål. Disse spørgsmål er delt op i 6 kategorier og indeholder 5 spørgsmål i stigende sværhedsgrad.</p>
+         <p>Når spillet starter vil en tilfældig spiller blive valgt til at vælge første spørgsmål. Når spørgsmålet bliver stillet, vil der være en tænkepause på 5 sekunder, hvorefter hver spiller kan buzze sig ind hvis de kender svaret på spørgsmålet. Det er kun den person som først buzzer sig ind, som får lov til at svare.</p>
+         <p>Bliver der svaret rigtigt på spørgsmålet vil spilleren få det antal point som spørgsmålet er værd tillagt til sine samlede point. Svarer en spiller forkert på spørgsmålet, vil denne spille bliver fratrukket det samme antal point.</p>
+         <p>Når et spørgsmål er blevet svaret rigtigt vil spilleren som svarede vælge næste spørgsmål. Blev spørgsmålet dog besvaret forkert, vil turen gå tilbage til forrige spiller.</p>
+         <p>Den spiller, som har flest point efter begge runder, vinder.</p>
+         <p>Man kan spille fra 2-4 spillere og et spil tager som regel mellem 30-45 minutter.</p>
+         <button class="knap" onclick="window.location.href='http://localhost:3000/gamemenu'">SPIL
+     </button></div>
+
+     <div id="omOs">
+         <hr class="solid">
+         <br>
+         <h2>OM OS</h2>
+         <p>DevTeam er et nyligt opstartet konsulent firma, bestående af 3 udviklere.</p>
+         <p>Vi har en unik kultur og sætter pris på folks individuelitet og forsøger at øge kreativiteten i hinanden.</p>
+         <p>Vi respekterer alle mennesker, er velkommende overfor nye og imødekommer diversitet ibaldn hinanden - her tager vi god hånd om hverandre.</p>
+     </div>
+ </div>
+ 
+ 
+
+
+</body></html>

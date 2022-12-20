@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="/css/styles.css">
+ <link rel="icon" type="image/x-icon" href="https://m.media-amazon.com/images/I/31M2GpmH5VL.png">
+ <title><%=title%></title>
+ <meta http-equiv="Cache-control" content="no-cache">
+ <meta http-equiv="Expires" content="-1">
+</head>
+<body>
+
+<nav role='navigation'>
+    <div class="header">
+        <img class="logo" src="/images/logo.png" alt="Jeopardy logo">
+    </div>
+
+    <div id="menuToggle">
+        <input type="checkbox" />
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <ul id="menu">
+        <a href="http://localhost:3000/"><li>Forside</li></a>
+        <!-- <a href="http://localhost:3000/scoreboard"><li>Leaderboard</li></a> -->
+        <!-- <a href="javascript:showHelpPopup()"><li>Hjælp</li></a> -->
+        <a href="http://localhost:3000/gamemenu"><li>Nyt spil</li></a>
+        </ul>
+    </div>
+</nav>
+
+ <section class="scoreboard_table_section">
+
+  <div class="scoreboard_table_container">
+
+   <table id="scoreboard">
+    <tr id="scoreboard_overskrifter">
+    </tr>
+    <tr class="row1" id="rank1">
+    </tr>
+   </table>
+
+  </div>
+
+   <script src="/scripts/playAgain.js"></script>
+   <script src="/scripts/clearScoreboard.js"></script>
+
+  <button id="playAgainButton" class="knap" onclick="playAgain()">Spil igen</button>
+  <button id="clearScoreboard" class="knap" onclick="clearScoreboard()">Nulstil scoreboard</button>
+
+ </section>
+
+</body>
+
+<script src="/scripts/scoreboard.js" type="module"></script>
+
+</html>
